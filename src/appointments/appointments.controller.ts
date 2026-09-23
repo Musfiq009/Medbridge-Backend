@@ -1,7 +1,6 @@
 import {
   Body,
   Controller,
-  Delete,
   Get,
   Param,
   ParseIntPipe,
@@ -11,7 +10,6 @@ import {
   Req,
   UseGuards,
 } from '@nestjs/common';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtGuard } from '../auth/jwtGuard';
 import { Roles } from '../auth/roles.decorator';
 import { RolesGuard } from '../auth/roles/roles.guard';
@@ -22,8 +20,6 @@ import { UpdateAppointmentDto } from './dtos/update-appointment.dto';
 
 @Controller('appointments')
 @UseGuards(JwtGuard, RolesGuard)
-@ApiTags('appointments')
-@ApiBearerAuth('access-token')
 export class AppointmentsController {
   constructor(private readonly appointmentsService: AppointmentsService) {}
 
@@ -47,11 +43,5 @@ export class AppointmentsController {
     @Req() req: any,
   ) {
     return this.appointmentsService.update(id, dto, req.user);
-  }
-
-  @Delete(':id')
-  @Roles(UserRole.DOCTOR, UserRole.CHW, UserRole.ADMIN)
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.appointmentsService.remove(id);
   }
 }
