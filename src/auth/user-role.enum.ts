@@ -49,3 +49,46 @@ export enum StockAction {
   REDUCE = 'REDUCE',
   SET = 'SET',
 }
+
+export enum DispenseStatus {
+  PENDING = 'PENDING',
+  PARTIAL = 'PARTIAL',
+  DISPENSED = 'DISPENSED',
+}
+
+export enum ReferralUrgency {
+  ROUTINE = 'ROUTINE',
+  URGENT = 'URGENT',
+  EMERGENCY = 'EMERGENCY',
+}
+
+export enum ReferralStatus {
+  PENDING = 'PENDING',
+  ACKNOWLEDGED = 'ACKNOWLEDGED',
+  COMPLETED = 'COMPLETED',
+  CANCELLED = 'CANCELLED',
+}
+
+export enum DiaryMood {
+  BETTER = 'BETTER',
+  SAME = 'SAME',
+  WORSE = 'WORSE',
+}
+
+export enum VisitOutcome {
+  ROUTINE_CHECK = 'ROUTINE_CHECK',
+  TRIAGE_DONE = 'TRIAGE_DONE',
+  REFERRED = 'REFERRED',
+  NOT_HOME = 'NOT_HOME',
+  FOLLOW_UP_NEEDED = 'FOLLOW_UP_NEEDED',
+}
+
+export enum AuditAction {
+  VIEW = 'VIEW',
+  CREATE = 'CREATE',
+  UPDATE = 'UPDATE',
+  DELETE = 'DELETE',
+  LOGIN = 'LOGIN',
+  LOGIN_FAILED = 'LOGIN_FAILED',
+  DISPENSE = 'DISPENSE',
+}

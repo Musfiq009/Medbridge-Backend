@@ -12,6 +12,7 @@ import { TriageModule } from './triage/triage.module';
 import { ConsultationsModule } from './consultations/consultations.module';
 import { MedicinesModule } from './medicines/medicines.module';
 import { PrescriptionsModule } from './prescriptions/prescriptions.module';
+import { AuditModule } from './audit/audit.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { PrescriptionsModule } from './prescriptions/prescriptions.module';
     ConsultationsModule,
     MedicinesModule,
     PrescriptionsModule,
+    AuditModule,
   ],
   controllers: [AppController],
   providers: [AppService],
